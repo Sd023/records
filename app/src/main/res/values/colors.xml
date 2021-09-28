@@ -10,4 +10,6 @@
     <color name="blue_font">#0336FF</color>
     <color name="yellow_font">#FFDE03</color>
     <color name="greyish">#232f34</color>
+    <color name="gradient_purple">#5200ae</color>
+    <color name="gradient_blue">#4062bb</color>
 </resources>

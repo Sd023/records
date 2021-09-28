@@ -26,8 +26,7 @@ public interface UserDao {
     @Query("SELECT * FROM users WHERE email_id = :email_id and password = :password")
     User login(String email_id, String password);
 
-    @Query("SELECT * FROM users ORDER BY username ASC")
-    LiveData<List<User>> getAllUsers();
+
 
 
 
