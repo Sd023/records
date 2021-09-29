@@ -25,12 +25,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        name_ed = (EditText) findViewById(R.id.name_usr_reg);
-        email_ed = (EditText) findViewById(R.id.email_usr_reg);
-        password_ed = (EditText) findViewById(R.id.password_usr_reg);
+        name_ed = findViewById(R.id.name_usr_reg);
+        email_ed =  findViewById(R.id.email_usr_reg);
+        password_ed =  findViewById(R.id.password_usr_reg);
 
-        reg_btn = (Button) findViewById(R.id.reg_btn);
-        loginIntentButton = (Button) findViewById(R.id.loginIntent);
+        reg_btn = findViewById(R.id.reg_btn);
+        loginIntentButton = findViewById(R.id.loginIntent);
 
 
         reg_btn.setOnClickListener(new View.OnClickListener() {
