@@ -17,12 +17,6 @@ public interface UserDao {
     @Insert
     void insertUser(User user);
 
-    @Update
-    void update(User user);
-
-    @Delete
-    void delete(User user);
-
     @Query("SELECT * FROM users WHERE email_id = :email_id and password = :password")
     User login(String email_id, String password);
 

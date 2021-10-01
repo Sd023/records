@@ -37,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent =  new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -56,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void run() {
                             User user = userDao.login(email_id,password);
+
                             if(user == null){
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -65,7 +67,6 @@ public class LoginActivity extends AppCompatActivity {
                                 });
                             }
                             else{
-
                                 String name = user.getUsername();
                                 String email = user.getEmail_id();
                                 Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);

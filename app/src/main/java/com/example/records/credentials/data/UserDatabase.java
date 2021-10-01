@@ -17,7 +17,7 @@ public  abstract class UserDatabase extends RoomDatabase {
     private static UserDatabase userDatabase;
     public abstract UserDao userDao();
 
-    public static synchronized UserDatabase getUserDatabase(Context context){
+    public static UserDatabase getUserDatabase(Context context){
         if(userDatabase == null){
             userDatabase = Room.databaseBuilder(context.getApplicationContext(), UserDatabase.class, dbName)
                     .fallbackToDestructiveMigration()

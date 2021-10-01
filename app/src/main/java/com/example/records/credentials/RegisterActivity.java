@@ -46,6 +46,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if(isValidate(user)){
                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
                    UserDao userDao = userDatabase.userDao();
+
                    new Thread(new Runnable() {
                        @Override
                        public void run() {
