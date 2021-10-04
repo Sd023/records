@@ -1,13 +1,8 @@
 package com.example.records.credentials.data;
 
 import android.content.Context;
-import android.os.AsyncTask;
-
-import androidx.annotation.NonNull;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
-import androidx.sqlite.db.SupportSQLiteDatabase;
-
 import model.User;
 
 @androidx.room.Database(entities = {User.class}, version = 1, exportSchema = false)
