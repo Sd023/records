@@ -10,8 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.records.R;
-import com.example.records.credentials.data.UserDao;
-import com.example.records.credentials.data.UserDatabase;
+import com.example.records.data.UserDao;
+import com.example.records.data.UserDatabase;
 
 import model.User;
 
@@ -44,7 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
                 User user = new User(username_register,email_register,password_register);
 
                 if(isValidate(user)){
-                   UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                   UserDatabase userDatabase = UserDatabase.getDatabase(getApplicationContext());
                    UserDao userDao = userDatabase.userDao();
 
                    new Thread(new Runnable() {

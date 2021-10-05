@@ -2,22 +2,14 @@ package com.example.records.gridviewActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.records.R;
-import com.example.records.credentials.RegisterActivity;
-import com.example.records.credentials.data.UserDao;
-import com.example.records.credentials.data.UserDatabase;
 import com.squareup.picasso.Picasso;
-
-import model.User;
 
 public class ProfileActivity extends AppCompatActivity {
 

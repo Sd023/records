@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import com.example.records.DashboardActivity;
 import com.example.records.R;
-import com.example.records.credentials.data.UserDao;
-import com.example.records.credentials.data.UserDatabase;
+import com.example.records.data.UserDao;
+import com.example.records.data.UserDatabase;
 
 import model.User;
 
@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Fill the required fields ", Toast.LENGTH_LONG).show();
                 }else{
 
-                    UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                    UserDatabase userDatabase = UserDatabase.getDatabase(getApplicationContext());
                     UserDao userDao = userDatabase.userDao();
                     new Thread(new Runnable() {
                         @Override
