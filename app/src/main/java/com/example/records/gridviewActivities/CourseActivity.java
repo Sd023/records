@@ -26,6 +26,7 @@ import model.Courses;
 
 public class CourseActivity extends AppCompatActivity {
 
+
     private CourseViewModel courseViewModel;
     public static final int REQUEST_CODE = 1;
 
@@ -96,7 +97,7 @@ public class CourseActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if(requestCode == REQUEST_CODE && resultCode == RESULT_OK){
-            Courses courses = new Courses(data.getStringExtra(NewCourseActivity.EXTRA_REPLY));
+            Courses courses = new Courses(data.getStringExtra(NewCourseActivity.TAG),data.getStringExtra(NewCourseActivity.EXTRA_TAG));
             courseViewModel.insert(courses);
         }
         else{

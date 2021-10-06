@@ -10,19 +10,37 @@
         android:layout_width="match_parent"
         app:cardCornerRadius="10dp"
         android:layout_marginTop="5dp"
-        android:backgroundTint="@android:color/holo_purple"
-        android:layout_height="50dp">
+        android:layout_height="80dp">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="ahskdasd"
-            android:fontFamily="@font/nexa_bold"
-            android:textSize="15sp"
-            />
+            android:background="@drawable/course_gradient"
+           >
+
+            <TextView
+                android:id="@+id/course_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/nexa_bold"
+                android:textColor="@color/white"
+                android:text=""
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/staff_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/course_name"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/nexa_light"
+                android:text=""
+                android:textColor="@color/white"
+                android:layout_marginStart="10dp"
+                android:textSize="15sp" />
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 

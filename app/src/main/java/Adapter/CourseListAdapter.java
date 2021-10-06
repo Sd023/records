@@ -22,11 +22,12 @@ public class CourseListAdapter extends ListAdapter<Courses, CourseViewHolder> {
     @Override
     public void onBindViewHolder(CourseViewHolder holder, int position) {
         Courses current = getItem(position);
-        holder.bind(current.getCourseName());
+        holder.bind(current.getCourseName(),current.getStaffName());
     }
     public Courses getPos(int position ){
         return getItem(position);
     }
+
 
     public static class CourseD extends DiffUtil.ItemCallback<Courses> {
 

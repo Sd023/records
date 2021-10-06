@@ -8,17 +8,20 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class NewCourseActivity extends AppCompatActivity {
 
-    public static final String EXTRA_REPLY = "REPLY";
-    private EditText editText;
+    public static final String TAG = "COURSE";
+    public static final String EXTRA_TAG = "STAFF";
+    private EditText editText, editText2;
     private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_new_course);
         editText = findViewById(R.id.edit_word);
+        editText2 = findViewById(R.id.edit_word2);
 
         button = findViewById(R.id.button_save);
 
@@ -27,10 +30,12 @@ public class NewCourseActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 if(TextUtils.isEmpty(editText.getText())){
-                    editText.setError("Required");
+                    Toast.makeText(getApplicationContext(), "Required", Toast.LENGTH_SHORT).show();
                 }else{
                     String course = editText.getText().toString();
-                    intent.putExtra(EXTRA_REPLY,course);
+                    String staff = editText2.getText().toString();
+                    intent.putExtra(TAG,course);
+                    intent.putExtra(EXTRA_TAG,staff);
                     setResult(RESULT_OK,intent);
                 }
                 finish();

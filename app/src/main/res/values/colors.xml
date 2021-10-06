@@ -12,4 +12,6 @@
     <color name="greyish">#232f34</color>
     <color name="gradient_purple">#5200ae</color>
     <color name="gradient_blue">#4062bb</color>
+    <color name="electric_end">#8E54E9</color>
+    <color name="electric_blue_start">#4776E6</color>
 </resources>

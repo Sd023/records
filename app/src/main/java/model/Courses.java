@@ -10,11 +10,12 @@ public class Courses {
 
     @PrimaryKey
     @NonNull
-    @ColumnInfo(name ="table_column_name")
+    @ColumnInfo(name = "table_column_name")
     private String courseName;
 
-    public Courses(@NonNull String courseName) {
+    public Courses(@NonNull String courseName, @NonNull String staffName) {
         this.courseName = courseName;
+        this.staffName = staffName;
     }
 
     @NonNull
@@ -24,5 +25,17 @@ public class Courses {
 
     public void setCourseName(@NonNull String courseName) {
         this.courseName = courseName;
+    }
+
+    @NonNull
+    @ColumnInfo(name = "StaffName")
+    private String staffName;
+
+    public String getStaffName() {
+        return staffName;
+    }
+
+    public void setStaffName(String staffName) {
+        this.staffName = staffName;
     }
 }

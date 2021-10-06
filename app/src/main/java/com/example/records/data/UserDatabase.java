@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 import model.Courses;
 import model.User;
 
-@androidx.room.Database(entities = {Courses.class, User.class}, version = 3, exportSchema = false)
+@androidx.room.Database(entities = {Courses.class, User.class}, version = 1, exportSchema = false)
 public  abstract class UserDatabase extends RoomDatabase {
 
     public abstract UserDao userDao();

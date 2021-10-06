@@ -3,7 +3,9 @@ package com.example.records.credentials;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     Button login_button,login_reg;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         password_input = findViewById(R.id.password_usr_login);
         login_button = findViewById(R.id.login_button);
         login_reg = findViewById(R.id.reg_login);
+
 
         login_reg.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +92,37 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyShare",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("name", email_input.getText().toString());
+        editor.putString("password",password_input.getText().toString());
+        editor.apply();
+        Log.v("SharedPreferences", "onPause Called");
 
+        Log.v("id", String.valueOf(email_input));
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        SharedPreferences sharedPreferences = getSharedPreferences("MyShare", MODE_PRIVATE);
+        SharedPreferences.Editor  editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+        Log.v("SharedPreferences","OnDestroy Called");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences sh = getSharedPreferences("MyShare",MODE_PRIVATE);
+        String s1 = sh.getString("name","");
+        String s2 = sh.getString("password","");
+        email_input.setText(s1);
+        password_input.setText(s2);
+        Log.v("SharedPreferences","onResume called");
+    }
 }

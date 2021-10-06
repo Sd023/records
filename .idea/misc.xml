@@ -8,6 +8,7 @@
         <entry key="app/src/main/res/drawable/b.xml" value="0.20970464135021097" />
         <entry key="app/src/main/res/drawable/button_shape.xml" value="0.20970464135021097" />
         <entry key="app/src/main/res/drawable/check.xml" value="0.20970464135021097" />
+        <entry key="app/src/main/res/drawable/course_gradient.xml" value="0.2123931623931624" />
         <entry key="app/src/main/res/drawable/f.xml" value="0.20970464135021097" />
         <entry key="app/src/main/res/drawable/gradient.xml" value="0.25885416666666666" />
         <entry key="app/src/main/res/drawable/h.xml" value="0.20970464135021097" />
@@ -22,7 +23,7 @@
         <entry key="app/src/main/res/layout/activity_courses.xml" value="0.17119565217391305" />
         <entry key="app/src/main/res/layout/activity_dashboard.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_new_course.xml" value="0.13134057971014493" />
+        <entry key="app/src/main/res/layout/activity_new_course.xml" value="0.165" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.39931448157669236" />
         <entry key="app/src/main/res/layout/activity_update_course.xml" value="0.17119565217391305" />
