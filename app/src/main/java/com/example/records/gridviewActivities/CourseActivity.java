@@ -40,13 +40,14 @@ public class CourseActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        //LiveData Observer
         courseViewModel =new ViewModelProvider(this).get(CourseViewModel.class);
         courseViewModel.getData().observe(this, courses ->{
             adapter.submitList(courses);
         });
 
-        FloatingActionButton floatingActionButton =findViewById(R.id.fab);
 
+        FloatingActionButton floatingActionButton =findViewById(R.id.fab);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -55,6 +56,7 @@ public class CourseActivity extends AppCompatActivity {
             }
         });
 
+        //RecyclerView Swipe to delete
         new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -72,6 +74,7 @@ public class CourseActivity extends AppCompatActivity {
 
     }
 
+    //Delete all data in the Room
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
@@ -92,6 +95,7 @@ public class CourseActivity extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -101,7 +105,7 @@ public class CourseActivity extends AppCompatActivity {
             courseViewModel.insert(courses);
         }
         else{
-            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Not Added", Toast.LENGTH_SHORT).show();
         }
     }
 }

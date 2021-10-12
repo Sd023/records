@@ -20,15 +20,9 @@ public class CourseViewModel extends AndroidViewModel {
         data = courseRepository.getRepoCourses();
     }
 
-   public LiveData<List<Courses>> getData(){
-        return data; }
-
-        public void insert (Courses courses){
-        courseRepository.insert(courses);
-        }
-
-        public void delete(Courses courses){courseRepository.delete(courses);}
-
-        public void deleteAll(){courseRepository.deleteAll();}
+   public LiveData<List<Courses>> getData(){ return data; }
+   public void insert (Courses courses){courseRepository.insert(courses);}
+   public void delete(Courses courses){courseRepository.delete(courses);}
+   public void deleteAll(){courseRepository.deleteAll();}
 
 }
