@@ -30,6 +30,7 @@ public class User {
         this.password = password;
     }
 
+
     public void setId(int id) {
         this.id = id;
     }

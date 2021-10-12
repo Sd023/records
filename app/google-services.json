@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "973849526655",
+    "project_id": "records-b14b1",
+    "storage_bucket": "records-b14b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973849526655:android:ed80e62e6c4eb2eb0ada4a",
+        "android_client_info": {
+          "package_name": "com.example.records"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973849526655-jh44u0o6j2h38d5ajb4jn1vbm9mj22bi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEAEcEm6JYqDiqPbxgmwepzwlEtfk4IhY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973849526655-jh44u0o6j2h38d5ajb4jn1vbm9mj22bi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

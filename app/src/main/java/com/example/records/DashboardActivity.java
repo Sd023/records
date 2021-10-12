@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.records.databinding.ActivityDashboardBinding;
+import com.example.records.gridviewActivities.CourseActivity;
 import com.example.records.gridviewActivities.ProfileActivity;
 
 import Adapter.CustomAdapter;
@@ -31,8 +32,8 @@ public class DashboardActivity extends AppCompatActivity {
        textView = (TextView) findViewById(R.id.disp_name);
         textView.setText(username);
 
-        String [] itemNames = {"Profile", "Settings" , "Home", "Marks", "Courses", "TO-DO"};
-        int[] images = {R.drawable.ic_outline_person_24,R.drawable.s, R.drawable.h, R.drawable.f, R.drawable.b, R.drawable.check};
+        String [] itemNames = {"Profile", "TO-DO" , "Home", "Marks", "Courses", "Settings"};
+        int[] images = {R.drawable.ic_outline_person_24,R.drawable.check, R.drawable.h, R.drawable.f, R.drawable.b, R.drawable.s};
 
         CustomAdapter customAdapter = new CustomAdapter(DashboardActivity.this, itemNames, images);
 
@@ -41,6 +42,7 @@ public class DashboardActivity extends AppCompatActivity {
         binding.gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
                 if(isProfile(i)){
                     Intent newIntent = new Intent(DashboardActivity.this, ProfileActivity.class);
                     Bundle bundle = getIntent().getExtras();
@@ -50,16 +52,17 @@ public class DashboardActivity extends AppCompatActivity {
                     startActivity(newIntent);
 
                 }
-                else if(isSettings(i)){
-                    Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
+                else if(isToDo(i)){
+                    Toast.makeText(getApplicationContext(), "TO-DO", Toast.LENGTH_SHORT).show();
                 }else if(isHome(i)){
                     Toast.makeText(getApplicationContext(), "Home", Toast.LENGTH_SHORT).show();
                 }else if(isMarks(i)){
                     Toast.makeText(getApplicationContext(), "Marks", Toast.LENGTH_SHORT).show();
                 }else if(isCourses(i)){
-                    Toast.makeText(getApplicationContext(), "Courses", Toast.LENGTH_SHORT).show();
-                }else if(isTodo(i)){
-                    Toast.makeText(getApplicationContext(), "TO-DO", Toast.LENGTH_SHORT).show();
+                   Intent intent = new Intent(DashboardActivity.this,CourseActivity.class);
+                   startActivity(intent);
+                }else if(isSettings(i)){
+                    Toast.makeText(getApplicationContext(), "Settings", Toast.LENGTH_SHORT).show();
 
                 }
 
@@ -72,7 +75,7 @@ public class DashboardActivity extends AppCompatActivity {
     public Boolean isProfile(int position){
         return position == 0;
     }
-    public Boolean isSettings(int position){
+    public Boolean isToDo(int position){
         return position ==1;
     }
     public Boolean isHome(int position){
@@ -84,7 +87,7 @@ public class DashboardActivity extends AppCompatActivity {
     public Boolean isCourses(int position){
         return position ==4;
     }
-    public Boolean isTodo(int position){
+    public Boolean isSettings(int position){
         return position==5;
     }
 

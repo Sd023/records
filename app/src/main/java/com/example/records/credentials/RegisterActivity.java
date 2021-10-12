@@ -10,8 +10,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.records.R;
-import com.example.records.credentials.data.UserDao;
-import com.example.records.credentials.data.UserDatabase;
+import com.example.records.data.UserDao;
+import com.example.records.data.UserDatabase;
 
 import model.User;
 
@@ -25,12 +25,12 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        name_ed = (EditText) findViewById(R.id.name_usr_reg);
-        email_ed = (EditText) findViewById(R.id.email_usr_reg);
-        password_ed = (EditText) findViewById(R.id.password_usr_reg);
+        name_ed = findViewById(R.id.name_usr_reg);
+        email_ed =  findViewById(R.id.email_usr_reg);
+        password_ed =  findViewById(R.id.password_usr_reg);
 
-        reg_btn = (Button) findViewById(R.id.reg_btn);
-        loginIntentButton = (Button) findViewById(R.id.loginIntent);
+        reg_btn = findViewById(R.id.reg_btn);
+        loginIntentButton = findViewById(R.id.loginIntent);
 
 
         reg_btn.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +44,9 @@ public class RegisterActivity extends AppCompatActivity {
                 User user = new User(username_register,email_register,password_register);
 
                 if(isValidate(user)){
-                   UserDatabase userDatabase = UserDatabase.getUserDatabase(getApplicationContext());
+                   UserDatabase userDatabase = UserDatabase.getDatabase(getApplicationContext());
                    UserDao userDao = userDatabase.userDao();
+
                    new Thread(new Runnable() {
                        @Override
                        public void run() {
@@ -55,6 +56,9 @@ public class RegisterActivity extends AppCompatActivity {
                                @Override
                                public void run() {
                                    Toast.makeText(getApplicationContext(),"Registered",Toast.LENGTH_SHORT).show();
+                                   Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                                   startActivity(intent);
+                                   finish();
 
                                }
                            });
